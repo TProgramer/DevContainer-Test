@@ -1,28 +1,34 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/alpine
+// devcontainer.json의 메타데이터는 다음 링크를 확인: https://aka.ms/devcontainer.json
 {
+	// dev container의 컨테이너 이름 설정
   "name": "Spring-Boot Test",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  // 사용할 Docker 이미지 또는 Docker-Compose 파일을 지정하기. 자세한 건 다음 링크를 확인: https://containers.dev/guide/dockerfile
   "image": "adoptopenjdk/openjdk11",
 
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
+  // 간편하게 제공되는 애드온 기능들을 추가하기. 자세한 건 다음 링크를 확인: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
 
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // 로컬 환경으로 연결할 포트 명시하기. Docker run의 -p 옵션과 동일
   "forwardPorts": [8080],
 
-  // Use 'postCreateCommand' to run commands after the container is created.
+  // 컨테이너가 생성된 후 실행할 명령어 설정하기.
   // "postCreateCommand": "uname -a",
 
-  // Configure tool-specific properties.
+  // IDE 별 설정 값을 지정하기.
   "customizations": {
-    // Configure properties specific to VS Code.
+    // 우리는 VSCode에서의 설정 값을 수정
     "vscode": {
-      // Add the IDs of extensions you want installed when the container is created.
+      // Extensions에서 원하는 Extension 클릭 후, 톱니바퀴 버튼을 눌러 Extension ID 값 복붙 
       "extensions": ["vscjava.vscode-java-pack", "vmware.vscode-boot-dev-pack"]
     }
-  }
+  },
 
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // 로컬에 존재하는 소스코드와 Bind-Mount 설정하기.
+  "workspaceMount": "source=${localWorkspaceFolder}, target=/workspace, type=bind, consistency=delegated",
+  "workspaceFolder": "/workspace"
+
+  // 컨테이너 실행 시, 접속할 유저 설정하기. 자세한 건 다음 링크를 확인: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
 }
