@@ -25,10 +25,6 @@
     }
   },
 
-  // 로컬에 존재하는 소스코드와 Bind-Mount 설정하기.
-  "workspaceMount": "source=${localWorkspaceFolder}, target=/workspace, type=bind, consistency=delegated",
-  "workspaceFolder": "/workspace"
-
   // 컨테이너 실행 시, 접속할 유저 설정하기. 자세한 건 다음 링크를 확인: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
 }
