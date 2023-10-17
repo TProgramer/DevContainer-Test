@@ -15,7 +15,7 @@
   "forwardPorts": [8080],
 
   // 컨테이너가 생성된 후 실행할 명령어 설정하기.
-  // "postCreateCommand": "uname -a",
+  "postCreateCommand": "apt-get update && apt-get install -y git",
 
   // IDE 별 설정 값을 지정하기.
   "customizations": {
