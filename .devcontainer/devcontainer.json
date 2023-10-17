@@ -7,9 +7,9 @@
 
   // 간편하게 제공되는 애드온 기능들을 추가하기. 자세한 건 다음 링크를 확인: https://containers.dev/features.
   // 단, Github Personal Token이 없으면 동작하지 않는 것으로 확인
-  "features": {
-    "ghcr.io/devcontainers/features/git:1": {}
-  },
+  // "features": {
+  //   "ghcr.io/devcontainers/features/git:1": {}
+  // },
 
   // 로컬 환경으로 연결할 포트 명시하기. Docker run의 -p 옵션과 동일
   "forwardPorts": [8080],
